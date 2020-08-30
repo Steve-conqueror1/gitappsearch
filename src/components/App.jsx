@@ -1,33 +1,45 @@
 import React, { Component } from 'react';
 import Header from './header.components';
+import { connect } from 'react-redux';
+import { setInputValue, fetchUsers } from '../actions';
 
 import './App.css';
 import UsersList from './UsersList';
 
-class App extends Component {
-  state = {
-    users: [],
-    text: '',
+const mapStateToProps = (state) => {
+  return {
+    text: state.searchUsers.text,
+    users: state.requestUsers.users,
+    isPending: state.requestUsers.isPending,
+    error: state.requestUsers.error,
   };
+};
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleChange: (e) => dispatch(setInputValue(e.target.value)),
+    onRequestUsers: () => dispatch(fetchUsers()),
+  };
+};
+
+class App extends Component {
   componentDidMount() {
-    fetch('https://api.github.com/users')
-      .then((response) => response.json())
-      .then((data) => this.setState({ users: data }));
+    this.props.onRequestUsers();
   }
 
-  handleChange = (e) => {
-    this.setState({ text: e.target.value });
-  };
-
   render() {
-    return (
+    // const {users} = this.props.searchUsers
+    const { text, handleChange, users, isPending } = this.props;
+
+    return isPending ? (
+      <h2>Loading</h2>
+    ) : (
       <div className="ui container">
-        <Header handleTextChange={this.handleChange} />
-        <UsersList users={this.state.users} text={this.state.text} />
+        <Header handleTextChange={handleChange} />
+        <UsersList users={users} text={text} />
       </div>
     );
   }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
