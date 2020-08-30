@@ -1,0 +1,38 @@
+body {
+  background-color: #ffffff;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='96' viewBox='0 0 60 96'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23dedddf' fill-opacity='0.28'%3E%3Cpath d='M36 10a6 6 0 0 1 12 0v12a6 6 0 0 1-6 6 6 6 0 0 0-6 6 6 6 0 0 1-12 0 6 6 0 0 0-6-6 6 6 0 0 1-6-6V10a6 6 0 1 1 12 0 6 6 0 0 0 12 0zm24 78a6 6 0 0 1-6-6 6 6 0 0 0-6-6 6 6 0 0 1-6-6V58a6 6 0 1 1 12 0 6 6 0 0 0 6 6v24zM0 88V64a6 6 0 0 0 6-6 6 6 0 0 1 12 0v12a6 6 0 0 1-6 6 6 6 0 0 0-6 6 6 6 0 0 1-6 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.menu {
+  background-color: black !important;
+  padding: 0.5rem 1rem;
+  width: 100% !important;
+}
+.users-list {
+  background-color: rgba(146, 143, 143, 0.418);
+  width: 100%;
+  margin: -1rem -0.35rem !important;
+}
+
+.login {
+  background-color: rgba(114, 108, 108, 0.9);
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  color: rgb(230, 140, 24);
+  border-radius: 0.2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.user {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  padding: 8rem 1rem !important;
+  margin: 2rem !important;
+  text-align: center;
+  position: relative;
+}
